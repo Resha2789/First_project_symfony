@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+
+    {% form_theme form "bootstrap_4_layout.html.twig" %}
+
+    <div class="input-group mb-3">
+        {{ form_widget(form.title, {'attr': {'class': 'form-control', 'placeholder':'Title'}}) }}
+        <span style="width: 5px"></span>
+        {{ form(form.status) }}
+    </div>
+
+    <div class="input-group mb-3">
+        {{ form_widget(form.description, {'attr': {'class': 'form-control', 'placeholder':'Description'}}) }}
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">День</span>
+        {{ form_widget(form.created.date.day, {'attr': {'class': 'form-control'}}) }}
+        <span class="input-group-text">Месяц</span>
+        {{ form_widget(form.created.date.month, {'attr': {'class': 'form-control'}}) }}
+        <span class="input-group-text">Год</span>
+        {{ form_widget(form.created.date.year, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+{% endblock %}

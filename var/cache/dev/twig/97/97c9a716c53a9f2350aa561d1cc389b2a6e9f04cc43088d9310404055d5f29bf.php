@@ -46,29 +46,33 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
         // line 1
         echo "<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset=\"UTF-8\">
-        <title>";
+<head>
+    <meta charset=\"UTF-8\">
+    <title>";
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-        ";
+    ";
         // line 8
-        echo "        ";
+        echo "    ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 11
+        // line 13
         echo "
-        ";
-        // line 12
+    ";
+        // line 14
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 15
-        echo "    </head>
-    <body>
-        ";
-        // line 17
+        // line 20
+        echo "</head>
+<body class=\"bg-light\">
+<header class=\"header\" style=\"height: 100px\">
+</header>
+<div class=\"container\" style=\"margin: auto;\">
+    ";
+        // line 25
         $this->displayBlock('body', $context, $blocks);
-        // line 18
-        echo "    </body>
+        // line 26
+        echo "</div>
+</body>
 </html>
 ";
         
@@ -109,9 +113,10 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 9
-        echo "            ";
-        // line 10
-        echo "        ";
+        echo "        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css\" rel=\"stylesheet\"
+              integrity=\"sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6\"
+              crossorigin=\"anonymous\">
+    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -120,7 +125,7 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
 
     }
 
-    // line 12
+    // line 14
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -130,10 +135,12 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 13
-        echo "            ";
-        // line 14
-        echo "        ";
+        // line 15
+        echo "        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js\"
+                integrity=\"sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf\"
+                crossorigin=\"anonymous\"></script>
+        <script src=\"https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js\"></script>
+    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -142,7 +149,7 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
 
     }
 
-    // line 17
+    // line 25
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -167,29 +174,38 @@ class __TwigTemplate_e205d81826005fbf1bcb23bee86d79bb38d77ec98501c3b1d7eb56c7960
 
     public function getDebugInfo()
     {
-        return array (  146 => 17,  136 => 14,  134 => 13,  124 => 12,  114 => 10,  112 => 9,  102 => 8,  83 => 5,  71 => 18,  69 => 17,  65 => 15,  63 => 12,  60 => 11,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  153 => 25,  139 => 15,  129 => 14,  116 => 9,  106 => 8,  87 => 5,  74 => 26,  72 => 25,  65 => 20,  63 => 14,  60 => 13,  57 => 8,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
+<head>
+    <meta charset=\"UTF-8\">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+    {% block stylesheets %}
+        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css\" rel=\"stylesheet\"
+              integrity=\"sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6\"
+              crossorigin=\"anonymous\">
+    {% endblock %}
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    {% block javascripts %}
+        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js\"
+                integrity=\"sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf\"
+                crossorigin=\"anonymous\"></script>
+        <script src=\"https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js\"></script>
+    {% endblock %}
+</head>
+<body class=\"bg-light\">
+<header class=\"header\" style=\"height: 100px\">
+</header>
+<div class=\"container\" style=\"margin: auto;\">
+    {% block body %}{% endblock %}
+</div>
+</body>
 </html>
 ", "base.html.twig", "C:\\OpenServer\\domains\\First_project_symfony\\templates\\base.html.twig");
     }
