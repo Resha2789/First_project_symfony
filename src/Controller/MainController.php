@@ -21,6 +21,12 @@ class MainController extends AbstractController
         $form = $this->createForm(NotesType::class, $notes);
         $form->handleRequest($request);
 
+        if ($form->isSubmitted() && $form->isValid()) {
+            $notes = $form->getData();
+//            dump($request); die;
+            return $this->redirectToRoute('index');
+        }
+
         return $this->render('main/index.html.twig', [
             'controller_name' => 'MainController',
             'form' => $form->createView(),

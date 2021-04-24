@@ -5,24 +5,37 @@
 {% block body %}
 
     {% form_theme form "bootstrap_4_layout.html.twig" %}
-
+    {{ form_start(form) }}
     <div class="input-group mb-3">
-        {{ form_widget(form.title, {'attr': {'class': 'form-control', 'placeholder':'Title'}}) }}
+        {{ form_widget(form.title, {'attr': {'placeholder':'Title'}}) }}
         <span style="width: 5px"></span>
-        {{ form(form.status) }}
+        {{ form_widget(form.status) }}
     </div>
-
     <div class="input-group mb-3">
-        {{ form_widget(form.description, {'attr': {'class': 'form-control', 'placeholder':'Description'}}) }}
+        {{ form_widget(form.description, {'attr': {'placeholder':'Description'}}) }}
     </div>
-
     <div class="input-group mb-3">
         <span class="input-group-text">День</span>
-        {{ form_widget(form.created.date.day, {'attr': {'class': 'form-control'}}) }}
+        {{ form_widget(form.created.date.day) }}
         <span class="input-group-text">Месяц</span>
-        {{ form_widget(form.created.date.month, {'attr': {'class': 'form-control'}}) }}
+        {{ form_widget(form.created.date.month) }}
         <span class="input-group-text">Год</span>
-        {{ form_widget(form.created.date.year, {'attr': {'class': 'form-control'}}) }}
+        {{ form_widget(form.created.date.year) }}
     </div>
+    <div class="input-group mb-3">
+        <div class="col-auto">
+            <span class="input-group-text">чч</span>
+        </div>
+        <div class="col-auto">
+            {{ form_widget(form.created.time.hour) }}
+        </div>
+        <div class="col-auto">
+            <span class="input-group-text">мм</span>
+        </div>
+        <div class="col-auto">
+            {{ form_widget(form.created.time.minute) }}
+        </div>
+    </div>
+
 
 {% endblock %}
